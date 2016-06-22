@@ -1,2 +1,5 @@
 language: java
 script: cd testcpv && mvn clean test jacoco:report coveralls:report
+addons:
+    code_climate:
+        repo_token: f34f4e26759b0ab6300e651af4bd7953eaa7487d5e783b0f0ade3f46f8a1862e
