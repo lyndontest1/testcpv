@@ -2,3 +2,7 @@ language: java
 script: cd testcpv && mvn clean test jacoco:report coveralls:report
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - curl https://www.jpm4j.org/install/script | sh
+  - jpm install com.codacy:codacy-coverage-reporter:assembly
+  - export CODACY_PROJECT_TOKEN=af5c3af183b74d20843dcaaf00003549
+  - codacy-coverage-reporter -l Java -r coverage.xml
